@@ -4,72 +4,75 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mansour Maps</title>
-
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #ffffff;
+      background: #f6ede2; /* بيج فاتح */
       color: #111;
-      direction: rtl;
     }
 
-    /* ===== Header & Logo ===== */
     .header {
       text-align: center;
-      padding: 40px 15px 30px;
-      background: #ffffff;
-      border-bottom: 1px solid #eee;
+      padding: 25px 15px;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
     }
 
-    .logo {
-      width: 220px;
-      max-width: 90%;
+    .header h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 1px;
     }
 
-    /* ===== Container ===== */
     .container {
       max-width: 900px;
-      margin: 30px auto;
+      margin: 20px auto;
       padding: 15px;
     }
 
-    /* ===== Area Button ===== */
     .area-btn {
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 14px 18px;
-      margin: 12px 0;
+      padding: 14px;
+      margin: 10px 0;
       border-radius: 12px;
-      background: #ffffff;
+      background: #ffffff; /* أزرار بيضاء */
       color: #111;
       border: 1px solid #ddd;
       font-size: 18px;
       cursor: pointer;
       font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
     }
 
     .area-btn:hover {
-      background: #f7f7f7;
+      background: #f2f2f2;
     }
 
-    /* ===== Branches Box ===== */
+    .area-btn span {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
     .branches {
       display: none;
       margin-top: 10px;
       padding: 12px;
       border-radius: 12px;
-      background: #ffffff;
-      border: 1px solid #eee;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
     }
 
     .branch {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 12px 5px;
+      padding: 12px;
       border-bottom: 1px solid #eee;
     }
 
@@ -83,49 +86,60 @@
     }
 
     .loc-btn {
-      padding: 8px 14px;
-      border-radius: 8px;
-      background: #ffffff;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: #ffffff; /* زر أبيض */
       color: #111;
       border: 1px solid #ddd;
       font-weight: bold;
-      text-decoration: none;
       cursor: pointer;
+      text-decoration: none;
     }
 
     .loc-btn:hover {
-      background: #f5f5f5;
+      background: #f2f2f2;
     }
   </style>
 </head>
-
 <body>
 
-  <!-- ===== Logo Header ===== -->
   <div class="header">
-    <img src="mansour-logo.png" alt="Mansour Logo" class="logo">
+    <h1>Mansour Maps</h1>
   </div>
 
   <div class="container">
 
-    <!-- المنطقة الوسطى -->
+    <!-- زر المنطقة -->
     <button class="area-btn" onclick="toggleBranches('middle', this)">
       <span>📍 المنطقة الوسطى</span>
       <span class="arrow">▿</span>
     </button>
 
+    <!-- فروع المنطقة الوسطى -->
     <div class="branches" id="middle">
       <div class="branch">
         <div class="branch-name">الرياض 1 - اسواق طيبة</div>
-        <a class="loc-btn" href="https://maps.app.goo.gl/9fmmK7LorE7ZQVsb7" target="_blank">Location</a>
+        <a class="loc-btn" href="https://maps.app.goo.gl/9fmmK7LorE7ZQVsb7?g_st=ipc" target="_blank">📍 Location</a>
       </div>
       <div class="branch">
         <div class="branch-name">الرياض 2 - اسواق طيبة</div>
-        <a class="loc-btn" href="https://maps.app.goo.gl/TPPjBadkZuMQMU37A" target="_blank">Location</a>
+        <a class="loc-btn" href="https://maps.app.goo.gl/TPPjBadkZuMQMU37A?g_st=ipc" target="_blank">📍 Location</a>
+      </div>
+      <div class="branch">
+        <div class="branch-name">الرياض 3 - رويال مول</div>
+        <a class="loc-btn" href="https://maps.app.goo.gl/915N46QDZLoArMbZ6?g_st=ipc" target="_blank">📍 Location</a>
+      </div>
+      <div class="branch">
+        <div class="branch-name">الرياض 4 - اسواق طيبة</div>
+        <a class="loc-btn" href="https://maps.app.goo.gl/NoFq8ZYbaTxU8MN5A?g_st=ic" target="_blank">📍 Location</a>
+      </div>
+      <div class="branch">
+        <div class="branch-name">الرياض 5 - اسواق طيبة</div>
+        <a class="loc-btn" href="https://maps.app.goo.gl/cWDc7tEbkRncWDjY8?g_st=ipc" target="_blank">📍 Location</a>
       </div>
     </div>
 
-    <!-- المنطقة الغربية -->
+    <!-- زر المنطقة الغربية -->
     <button class="area-btn" onclick="toggleBranches('west', this)">
       <span>📍 المنطقة الغربية</span>
       <span class="arrow">▿</span>
@@ -134,15 +148,35 @@
     <div class="branches" id="west">
       <div class="branch">
         <div class="branch-name">جدة - البوادي</div>
-        <a class="loc-btn" href="https://maps.app.goo.gl/fcsdQppEGnuHcecq6" target="_blank">Location</a>
+        <a class="loc-btn" href="https://maps.app.goo.gl/fcsdQppEGnuHcecq6" target="_blank">📍 Location</a>
       </div>
       <div class="branch">
         <div class="branch-name">مكة - مكة مول</div>
-        <a class="loc-btn" href="https://maps.app.goo.gl/ikK1f2XHJKu6Q9UAA" target="_blank">Location</a>
+        <a class="loc-btn" href="https://maps.app.goo.gl/ikK1f2XHJKu6Q9UAA" target="_blank">📍 Location</a>
+      </div>
+      <div class="branch">
+        <div class="branch-name">المدينة 5</div>
+        <a class="loc-btn" href="https://maps.app.goo.gl/bydR3hJHs4dE2xQB9?g_st=iwb" target="_blank">📍 Location</a>
+      </div>
+      <div class="branch">
+        <div class="branch-name">المدينة 6</div>
+        <a class="loc-btn" href="https://maps.app.goo.gl/cdTHy3pSPieQTMvF8" target="_blank">📍 Location</a>
+      </div>
+      <div class="branch">
+        <div class="branch-name">المدينة 8</div>
+        <a class="loc-btn" href="https://maps.app.goo.gl/LoBxk8XVE9KY2iYF6?g_st=ic" target="_blank">📍 Location</a>
+      </div>
+      <div class="branch">
+        <div class="branch-name">المدينة 9</div>
+        <a class="loc-btn" href="https://maps.app.goo.gl/S71viyejeo1p3spJ9?g_st=ic" target="_blank">📍 Location</a>
+      </div>
+      <div class="branch">
+        <div class="branch-name">العلا - البلدة القديمة</div>
+        <a class="loc-btn" href="https://maps.app.goo.gl/iMVmVqoe6qPpRqWk8" target="_blank">📍 Location</a>
       </div>
     </div>
 
-    <!-- المنطقة الشمالية -->
+    <!-- زر المنطقة الشمالية -->
     <button class="area-btn" onclick="toggleBranches('north', this)">
       <span>📍 المنطقة الشمالية</span>
       <span class="arrow">▿</span>
@@ -151,11 +185,47 @@
     <div class="branches" id="north">
       <div class="branch">
         <div class="branch-name">حائل 1</div>
-        <a class="loc-btn" href="https://maps.app.goo.gl/GveyzgLYwjVvVthbA" target="_blank">Location</a>
+        <a class="loc-btn" href="https://maps.app.goo.gl/GveyzgLYwjVvVthbA" target="_blank">📍 Location</a>
+      </div>
+      <div class="branch">
+        <div class="branch-name">حائل 2</div>
+        <a class="loc-btn" href="https://maps.app.goo.gl/19tShWesEd6tNWMCA?g_st=ic" target="_blank">📍 Location</a>
+      </div>
+      <div class="branch">
+        <div class="branch-name">حائل 3</div>
+        <a class="loc-btn" href="https://maps.app.goo.gl/3b2DhCPxPa3TD49q7?g_st=ic" target="_blank">📍 Location</a>
+      </div>
+      <div class="branch">
+        <div class="branch-name">حائل 4</div>
+        <a class="loc-btn" href="https://maps.app.goo.gl/3tqnGMBMj8JqxRcr5?g_st=ic" target="_blank">📍 Location</a>
+      </div>
+      <div class="branch">
+        <div class="branch-name">حفر الباطن 1</div>
+        <a class="loc-btn" href="https://maps.app.goo.gl/EhiQxMVAsR4VpkKGA" target="_blank">📍 Location</a>
+      </div>
+      <div class="branch">
+        <div class="branch-name">حفر الباطن 2</div>
+        <a class="loc-btn" href="https://maps.app.goo.gl/wo8W6S2unfzs7gbr7?g_st=ic" target="_blank">📍 Location</a>
+      </div>
+      <div class="branch">
+        <div class="branch-name">حفر الباطن 3</div>
+        <a class="loc-btn" href="https://maps.app.goo.gl/gzsjPddCKbCyHrMm8?g_st=ic" target="_blank">📍 Location</a>
+      </div>
+      <div class="branch">
+        <div class="branch-name">حفر الباطن 4</div>
+        <a class="loc-btn" href="https://maps.app.goo.gl/wCaH4KbY9EVbe6NEA" target="_blank">📍 Location</a>
+      </div>
+      <div class="branch">
+        <div class="branch-name">حفر الباطن 7</div>
+        <a class="loc-btn" href="https://maps.app.goo.gl/u5sFvhAssoNaF5Mp8?g_st=ic" target="_blank">📍 Location</a>
+      </div>
+      <div class="branch">
+        <div class="branch-name">حفر الباطن 8</div>
+        <a class="loc-btn" href="https://maps.app.goo.gl/B7PENq2JEiH1eMJV9?g_st=ic" target="_blank">📍 Location</a>
       </div>
     </div>
 
-    <!-- المنطقة الجنوبية -->
+    <!-- زر المنطقة الجنوبية -->
     <button class="area-btn" onclick="toggleBranches('south', this)">
       <span>📍 المنطقة الجنوبية</span>
       <span class="arrow">▿</span>
@@ -164,7 +234,27 @@
     <div class="branches" id="south">
       <div class="branch">
         <div class="branch-name">خميس مشيط 1</div>
-        <a class="loc-btn" href="https://maps.app.goo.gl/XXxphEN1cBZdjzNTA" target="_blank">Location</a>
+        <a class="loc-btn" href="https://maps.app.goo.gl/XXxphEN1cBZdjzNTA" target="_blank">📍 Location</a>
+      </div>
+      <div class="branch">
+        <div class="branch-name">خميس مشيط 2</div>
+        <a class="loc-btn" href="https://maps.app.goo.gl/ndc74fDdWX7Myv4TA?g_st=ic" target="_blank">📍 Location</a>
+      </div>
+      <div class="branch">
+        <div class="branch-name">خميس مشيط موجان</div>
+        <a class="loc-btn" href="https://maps.app.goo.gl/JaWYs8vL7tDhk754A" target="_blank">📍 Location</a>
+      </div>
+      <div class="branch">
+        <div class="branch-name">جازان - صبيا</div>
+        <a class="loc-btn" href="https://maps.app.goo.gl/ZjQf68dEc954zhCP8" target="_blank">📍 Location</a>
+      </div>
+      <div class="branch">
+        <div class="branch-name">جازان 2 - أبو عريش</div>
+        <a class="loc-btn" href="https://maps.app.goo.gl/H6FcLeUmfGwuCsNG7" target="_blank">📍 Location</a>
+      </div>
+      <div class="branch">
+        <div class="branch-name">جازان 3 - أبو عريش</div>
+        <a class="loc-btn" href="https://maps.app.goo.gl/XXNsYdQoM1zd876D6" target="_blank">📍 Location</a>
       </div>
     </div>
 
