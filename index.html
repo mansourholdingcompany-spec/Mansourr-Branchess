@@ -110,9 +110,9 @@
   <div class="container">
 
     <!-- زر المنطقة -->
-    <button class="area-btn" onclick="toggleBranches('middle', this)">
+    <button class="area-btn" onclick="toggleBranches('middle')">
       <span>📍 المنطقة الوسطى</span>
-      <span class="arrow">▿</span>
+      <span>▼</span>
     </button>
 
     <!-- فروع المنطقة الوسطى -->
@@ -140,9 +140,9 @@
     </div>
 
     <!-- زر المنطقة الغربية -->
-    <button class="area-btn" onclick="toggleBranches('west', this)">
+    <button class="area-btn" onclick="toggleBranches('west')">
       <span>📍 المنطقة الغربية</span>
-      <span class="arrow">▿</span>
+      <span>▼</span>
     </button>
 
     <div class="branches" id="west">
@@ -177,9 +177,9 @@
     </div>
 
     <!-- زر المنطقة الشمالية -->
-    <button class="area-btn" onclick="toggleBranches('north', this)">
+    <button class="area-btn" onclick="toggleBranches('north')">
       <span>📍 المنطقة الشمالية</span>
-      <span class="arrow">▿</span>
+      <span>▼</span>
     </button>
 
     <div class="branches" id="north">
@@ -226,9 +226,9 @@
     </div>
 
     <!-- زر المنطقة الجنوبية -->
-    <button class="area-btn" onclick="toggleBranches('south', this)">
+    <button class="area-btn" onclick="toggleBranches('south')">
       <span>📍 المنطقة الجنوبية</span>
-      <span class="arrow">▿</span>
+      <span>▼</span>
     </button>
 
     <div class="branches" id="south">
@@ -261,11 +261,9 @@
   </div>
 
   <script>
-    function toggleBranches(id, btn) {
+    function toggleBranches(id) {
       const el = document.getElementById(id);
-      const isOpen = el.style.display === "block";
-      el.style.display = isOpen ? "none" : "block";
-      btn.querySelector(".arrow").textContent = isOpen ? "▿" : "▴";
+      el.style.display = (el.style.display === "block") ? "none" : "block";
     }
   </script>
 
